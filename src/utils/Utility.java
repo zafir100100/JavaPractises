@@ -43,4 +43,20 @@ public class Utility
         // printing the total number of notes
 //        System.out.println("Total Number of Notes\t= " + totalNotes);
     }
+    
+    // Find out sum of digits of a number
+    public int getSumOfDigits(int number)
+    {
+        int digit, sum = 0;
+        while (number > 0)
+        {
+            //finds the last digit of the given number    
+            digit = number % 10;
+            //adds last digit to the variable sum  
+            sum = sum + digit;
+            //removes the last digit from the number  
+            number = number / 10;
+        }
+        return sum;
+    }
 }

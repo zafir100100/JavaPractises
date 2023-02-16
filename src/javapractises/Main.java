@@ -16,6 +16,10 @@ public class Main
         obj.countNumberOfNotesFromAmouts(amount, new int[]
         {
         });
+        // Find out sum of digits of a number
+        System.out.println("Enter the number to find out sum of digits: ");
+        int number = sc.nextInt();
+        System.out.println(obj.getSumOfDigits(number));
     }
 
 }
