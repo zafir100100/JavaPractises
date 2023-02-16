@@ -1,5 +1,13 @@
 package utils;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 public class Utility
 {
 
@@ -148,5 +156,59 @@ public class Utility
             newWord += (char) (word.charAt(i) + 5);
         }
         return newWord;
+    }
+
+    // read and write into a json file
+    public void updateJsonFile(String name, String email, String password, String address, String mobileNo)
+    {
+        try
+        {
+            String fileName = "resources/users.json";
+            File file = new File(fileName);
+            // if file doesn't exist
+            if (!file.exists())
+            {
+                // create the file
+                boolean isFileCreated = file.createNewFile();
+                // if file creation failed, exit
+                if (!isFileCreated)
+                {
+                    System.out.println("File creation failed");
+                    return;
+                }
+                // if file creation successful
+                // initialize it with a blank json array
+                FileWriter myWriter = new FileWriter(file);
+                myWriter.write("[]");
+                myWriter.close();
+            }
+            // note: this json file can't be blank initially
+            // put {} or [] in file first, or it will generate
+            // parse error
+            FileReader reader = new java.io.FileReader(fileName);
+            org.json.simple.parser.JSONParser parser = new JSONParser();
+
+            Object obj = parser.parse(reader);
+            JSONArray jsonArray = (JSONArray) obj;
+            JSONObject userObject = new JSONObject();
+            userObject.put("name", name);
+            userObject.put("email", email);
+            userObject.put("password", password);
+            userObject.put("address", address);
+            userObject.put("mobileNo", mobileNo);
+            jsonArray.add(userObject);
+
+            FileWriter fw = new FileWriter(fileName);
+            fw.write(jsonArray.toJSONString());
+            fw.flush();
+            fw.close();
+
+            parser.reset();
+            reader.close();
+        }
+        catch (Exception ex)
+        {
+            System.out.println("Json file update failed");
+        }
     }
 }

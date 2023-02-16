@@ -32,6 +32,19 @@ public class Main
         System.out.println("Enter a word to encrypt: ");
         String word2 = sc.next();
         System.out.println(obj.getEncryptedWord1(word2));
+        // Read and write into a json file
+        System.out.println("Enter following information to save in json file: ");
+        System.out.println("Enter name: ");
+        String name = sc.next();
+        System.out.println("Enter email: ");
+        String email = sc.next();
+        System.out.println("Enter password: ");
+        String password = sc.next();
+        System.out.println("Enter address: ");
+        String address = sc.next();
+        System.out.println("Enter mobile No: ");
+        String mobileNo = sc.next();
+        obj.updateJsonFile(name, email, password, address, mobileNo);
     }
 
 }
