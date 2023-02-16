@@ -47,7 +47,7 @@ public class Utility
     }
 
     // Write a program that will count number of notes from given array
-    public void countNumberOfNotesFromAmouts(int amount, int[] denominations)
+    public void getNumberOfNotesFromAmouts(int amount, int[] denominations)
     {
         // if denominations is not initialized, initialize it
         if (denominations.length == 0)
@@ -102,4 +102,31 @@ public class Utility
         return sum;
     }
 
+    // Count Vowels and consonants from a word
+    public void getVowelsAndConsonantsFromWord(String word)
+    {
+        //Counter variable to store the count of vowels and consonant    
+        int vCount = 0, cCount = 0;
+
+        //Converting entire string to lower case to reduce the comparisons    
+        word = word.toLowerCase();
+
+        for (int i = 0; i < word.length(); i++)
+        {
+            //Checks whether a character is a vowel    
+            if (word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u')
+            {
+                //Increments the vowel counter    
+                vCount++;
+            }
+            //Checks whether a character is a consonant    
+            else if (word.charAt(i) >= 'a' && word.charAt(i) <= 'z')
+            {
+                //Increments the consonant counter    
+                cCount++;
+            }
+        }
+        System.out.println("Vowel: " + vCount);
+        System.out.println("Consonant: " + cCount);
+    }
 }
