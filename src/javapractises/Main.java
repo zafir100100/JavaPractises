@@ -10,6 +10,10 @@ public class Main
     {
         Scanner sc = new Scanner(System.in);
         Utility obj = new Utility();
+        // Print prime numbers between 2 numbers
+        System.out.println("Prime numbers between 2 and 100 are: ");
+        obj.getPrimesBetweenTwoNumbers(2, 100);
+        System.out.println("");
         // Write a program that will count number of notes from given array
         System.out.println("Enter the number of amount to get the denominations: ");
         int amount = sc.nextInt();
