@@ -26,8 +26,12 @@ public class Main
         System.out.println(obj.getSumOfDigits(number));
         // Count Vowels and consonants from a word
         System.out.println("Enter a word to count Vowels and consonants: ");
-        String word = sc.next();
-        obj.getVowelsAndConsonantsFromWord(word);
+        String word1 = sc.next();
+        obj.getVowelsAndConsonantsFromWord(word1);
+        // Encrypt word : for each letter, go to 5 letter forward but make A to E 
+        System.out.println("Enter a word to encrypt: ");
+        String word2 = sc.next();
+        System.out.println(obj.getEncryptedWord1(word2));
     }
 
 }

@@ -129,4 +129,24 @@ public class Utility
         System.out.println("Vowel: " + vCount);
         System.out.println("Consonant: " + cCount);
     }
+
+    //encrypt word : for each letter, go to 5 letter forward but make A to E 
+    public String getEncryptedWord1(String word)
+    {
+        // Encryption algo: go to 4 letter forward
+        int l = word.length();
+        String newWord = "";
+        // using simple for-loop
+        for (int i = 0; i < l; i++)
+        {
+            // special rule: if it is A, make it E
+            if ((char) word.charAt(i) == 'A')
+            {
+                newWord += "E";
+                continue;
+            }
+            newWord += (char) (word.charAt(i) + 5);
+        }
+        return newWord;
+    }
 }
