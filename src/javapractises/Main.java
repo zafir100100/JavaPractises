@@ -12,9 +12,7 @@ public class Main
         Utility obj = new Utility();
         // Write a program that will count number of notes from given array
         System.out.println("Enter the number of amount to get the denominations: ");
-        System.out.println("");
         int amount = sc.nextInt();
-        System.out.println("");
         obj.countNumberOfNotesFromAmouts(amount, new int[]
         {
         });

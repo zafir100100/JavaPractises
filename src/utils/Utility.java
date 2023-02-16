@@ -21,7 +21,7 @@ public class Utility
         int copy = amount;
         int totalNotes = 0, count = 0;
 
-        System.out.println("Denominations : \n");
+//        System.out.println("Denominations : \n");
 
         // check for notes.
         for (int i = 0; i < denominationCount; i++)
@@ -30,16 +30,17 @@ public class Utility
             count = amount / denominations[i];
             if (count != 0)
             {
-                System.out.println(denominations[i] + "\tx\t" + count + "\t= " + denominations[i] * count);
+//                System.out.println(denominations[i] + "\tx\t" + count + "\t= " + denominations[i] * count);
+                System.out.println(denominations[i] + " " + count);
             }
             totalNotes = totalNotes + count; //finding the total number of notes
             amount = amount % denominations[i]; //finding the remaining amount whose Rsomination is to be found
         }
-        System.out.println("--------------------------------");
+//        System.out.println("--------------------------------");
         // printing the total amount
-        System.out.println("TOTAL\t\t\t= " + copy);
-        System.out.println("--------------------------------");
+//        System.out.println("TOTAL\t\t\t= " + copy);
+//        System.out.println("--------------------------------");
         // printing the total number of notes
-        System.out.println("Total Number of Notes\t= " + totalNotes);
+//        System.out.println("Total Number of Notes\t= " + totalNotes);
     }
 }
